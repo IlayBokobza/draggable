@@ -1,1 +1,3 @@
-console.log('Hello World!')
+import { Draggable } from "./dragable";
+
+const e = new Draggable('#draggable')
