@@ -1,5 +1,4 @@
 import { Draggable } from "./dragable";
+import { GravityDragable } from "./gravityDragable";
 
-const e = new Draggable('#draggable',{
-    gravity:true
-})
+const e = new GravityDragable('#draggable')
