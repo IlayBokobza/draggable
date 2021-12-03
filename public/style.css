@@ -9,4 +9,14 @@
     width: 100px;
     height: 100px;
     background-color: rgb(150, 0, 155);
+    z-index: 1000;
+}
+
+#dropzone{
+    position: absolute;
+    bottom: 0;
+    width: 50vw;
+    height: 100px;
+    left: 300px;
+    background-color: orangered;
 }
