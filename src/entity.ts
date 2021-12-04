@@ -19,7 +19,10 @@ export class Entity{
         this.htmlElement = element;
     }
 
-    /**Converts an HTML elemnt to an entity */
+    /**
+     * Converts an HTML elemnt to an entity 
+     * @param element is the element you want converted ito an entity
+     * */
     public static fromHtmlElement(element:HTMLElement){
         const bodyRect = document.body.getBoundingClientRect()
         const elemRect = element.getBoundingClientRect()
@@ -29,6 +32,7 @@ export class Entity{
         return new Entity(x,y,element.clientWidth,element.clientHeight)
     }
 
+    /** Sets the vector of the entity (the X and Y) */
     public setVector(x:number,y:number){
         this.x = x;
         this.y = y;

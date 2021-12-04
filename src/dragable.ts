@@ -33,7 +33,7 @@ export class Draggable{
         this.makeDragable()
     }
 
-    //registers all the drop zones
+    /**Registers all the drop zones*/
     private registerDropZones(dropZonesSelectors:string[]){
         const dropZones = dropZonesSelectors.map(selector => {
             const zone = document.querySelector(selector)
@@ -45,7 +45,7 @@ export class Draggable{
         return dropZones
     }
 
-    //listen to the release event and checks for collision
+    /**Listen to the release event and checks for collision*/
     private setCollisionCheck(){
         this.element.addEventListener('release',() => {
             this.dropZones!.forEach(e => {
@@ -64,7 +64,10 @@ export class Draggable{
         })
     }
 
-    //checks the collision of the entiy with another
+    /**
+     * Runs a collision test on this.entity with another entity
+     * @param other the other entity to run the test on
+     * */
     public checkCollision(other:Entity){
         //AABB test; taken from https://www.youtube.com/watch?v=59BTXB-kFNs
         const test1 = this.entity.x < other.x + other.w
@@ -75,7 +78,7 @@ export class Draggable{
         return test1 && test2 && test3 && test4;
     }
 
-    //makes the object draggable
+    /**Turns the element draggable*/
     private makeDragable(){
         this.element.style.cursor = 'grab'
         this.element.style.position = 'absolute'
@@ -96,7 +99,7 @@ export class Draggable{
         })
     }
 
-    //event handler for onmousemove
+    /**The event handler for onmousemove*/
     public onMouseMove = (e:MouseEvent) => {
         const x = e.clientX-this.element.clientWidth/2
         const y = e.clientY-this.element.clientHeight/2
@@ -111,7 +114,7 @@ export class Draggable{
         }
     }
 
-    //destroys the object
+    /**Destroy the object*/
     public destroy(){
         this.element.remove()
     }
